@@ -48,7 +48,7 @@ services:
     # volume mounting -> source : destination
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
-      - ./customs:/mnt/extra-addons
+      - ./customes:/mnt/extra-addons
       - ./requirements.txt:/requirements.txt
 #
     networks:

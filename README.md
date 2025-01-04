@@ -1,4 +1,4 @@
-# odoo16_simple_purchase
+# Sale Portal
 
 # install Guide
 
@@ -15,7 +15,7 @@ ckeck it running on
 
 [localhost:9091/](http://localhost:9091)
 
-### ** For Install simple Purchase module ** 
+### ** For Install Sale Portal module ** 
 
 go to the apps and enable debug mode <br/>
 
