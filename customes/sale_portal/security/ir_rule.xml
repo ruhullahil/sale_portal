@@ -35,10 +35,17 @@
 
         <record id="partner_rule_portal_new" model="ir.rule">
         <field name="name">Portal partner access</field>
-        <field name="model_id" ref="sale.model_sale_order_line"/>
-        <field name="domain_force">['|',('order_id.message_partner_ids','child_of',[user.commercial_partner_id.id]),('order_id.creator_user','=',user.id)]</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="domain_force">[('1','=',1)]</field>
         <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
     </record>
+<!--        <record id="partner_rule_portal_new" model="ir.rule">-->
+<!--        <field name="name">Portal partner access</field>-->
+<!--        <field name="model_id" ref="sale.model_sale_order_line"/>-->
+<!--        <field name="domain_force">['|',('order_id.message_partner_ids','child_of',[user.commercial_partner_id.id]),('order_id.creator_user','=',user.id)]</field>-->
+<!--        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>-->
+<!--    </record>-->
+
 
 
     </data>
