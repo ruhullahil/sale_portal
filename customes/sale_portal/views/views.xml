@@ -1,0 +1,24 @@
+<odoo>
+  <record id="sale_order_create_action" model="ir.actions.act_window">
+      <field name="name">Order Create</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">sale.order</field>
+      <field name="view_mode">form</field>
+      <field name="context">{'default_from_portal':True}</field>
+
+  </record>
+    <!-- Inherit Form View to Modify it -->
+    <record id="sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group[@name='sales_person']" position="inside">
+                <field name="from_portal" readonly="1" force_save="1"/>
+                <field name="creator_user" readonly="1" force_save="1"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

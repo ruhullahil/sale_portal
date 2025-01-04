@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sale.access_sale_order_portal,sale.order.portal,sale.model_sale_order,base.group_portal,1,1,1,0
+product_price_list_portal,sale.order.portal,product.model_product_pricelist,base.group_portal,1,0,0,0
+product_price_list_item_portal,sale.order.portal,product.model_product_pricelist_item,base.group_portal,1,0,0,0
+product_template_portal,sale.order.portal,product.model_product_template,base.group_portal,1,0,0,0
+product_product_item_portal,sale.order.portal,product.model_product_product,base.group_portal,1,0,0,0
+account_payment_term_portal,sale.order.portal,account.model_account_payment_term,base.group_portal,1,0,0,0
+sale.access_sale_order_line_portal,sale.order.line.portal,sale.model_sale_order_line,base.group_portal,1,1,1,1
+mail_activity_portal,sale.order.line.portal,mail.model_mail_activity,base.group_portal,1,1,1,1
+

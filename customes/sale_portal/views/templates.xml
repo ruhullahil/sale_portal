@@ -1,0 +1,40 @@
+<odoo>
+<template id="my_sale_portal_extend" name="sale portal extend" customize_show="True" inherit_id="sale.portal_my_orders" priority="20">
+    <xpath expr="//div[@t-if='not orders']" position="before">
+        <a href="/order/create" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create Order</a>
+    </xpath>
+</template>
+
+<template id="sales_sharing_portal" name="My Project">
+    <t t-call="portal.frontend_layout">
+        <!-- To add the class on div#wrapwrap to remove the overflow -->
+        <t t-set="pageName" t-value="'o_project_sharing_container'"/>
+        <t t-set="no_footer" t-value="true"/>
+        <t t-call="sale_portal.sales_sharing"/>
+    </t>
+</template>
+
+<template id="sales_sharing" name="Project Sharing View">
+    <!--    We need to forward the request lang to ensure that the lang set on the portal match the lang delivered -->
+    <iframe class="flex-grow-1" frameborder="0" t-attf-src="/{{ request.context['lang'] }}/order/sale/sale_sharing"/>
+</template>
+
+<template id="sales_sharing_embed" name="Sales Sharing View Embed">
+    <t t-call="web.layout">
+        <t t-set="head_sale_sharing">
+            <script type="text/javascript">
+<!--                    console.log('session_info',session_info)-->
+                odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                // Prevent the menu_service to load anything. In an ideal world, Project Sharing assets would only contain
+                // what is genuinely necessary, and not the whole backend.
+                odoo.loadMenusPromise = Promise.resolve();
+            </script>
+            <base target="_parent"/>
+            <t t-call-assets="project.webclient"/>
+        </t>
+        <t t-set="head" t-value="head_sale_sharing + (head or '')"/>
+        <t t-set="body_classname" t-value="'o_web_client o_project_sharing'"/>
+    </t>
+</template>
+
+</odoo>
