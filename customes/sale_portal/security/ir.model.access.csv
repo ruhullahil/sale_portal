@@ -7,4 +7,9 @@ product_product_item_portal,sale.order.portal,product.model_product_product,base
 account_payment_term_portal,sale.order.portal,account.model_account_payment_term,base.group_portal,1,0,0,0
 sale.access_sale_order_line_portal,sale.order.line.portal,sale.model_sale_order_line,base.group_portal,1,1,1,1
 mail_activity_portal,sale.order.line.portal,mail.model_mail_activity,base.group_portal,1,1,1,1
+ir_sequence_portal,sale.order.line.portal,base.model_ir_sequence,base.group_portal,1,1,1,1
+product_attribute_custom_value_portal,sale.order.line.portal,product.model_product_attribute_custom_value,base.group_portal,1,1,1,1
+sale_order_option_portal,sale.order.line.portal,sale_management.model_sale_order_option,base.group_portal,1,1,1,1
+mail_followers_portal,sale.order.line.portal,mail.model_mail_followers,base.group_portal,1,1,1,1
+mail_message_portal,sale.order.line.portal,mail.model_mail_message,base.group_portal,1,1,1,1
 
